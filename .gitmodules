@@ -1,3 +1,0 @@
-[submodule "qcloud-iot-sdk-embedded-c"]
-	path = qcloud-iot-sdk-embedded-c
-	url = https://github.com/tencentyun/qcloud-iot-sdk-embedded-c.git
