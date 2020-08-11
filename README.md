@@ -90,3 +90,4 @@ make flash monitor
 * 腾讯云设备端 SDK： [qcloud-iot-sdk](https://github.com/tencentyun/qcloud-iot-sdk-embedded-c)
 
 
+## 4. 测试
