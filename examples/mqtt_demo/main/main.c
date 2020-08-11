@@ -204,6 +204,7 @@ static int _publish_msg(void* client)
     char topic_content[MAX_SIZE_OF_TOPIC_CONTENT + 1] = {0};
 
     int size = HAL_Snprintf(topic_content, sizeof(topic_content), "{\"action\": \"publish_test\", \"count\": \"%d\"}", sg_count++);
+   // int size = HAL_Snprintf(topic_content, sizeof(topic_content), "{\"action\": \"publish_test\", \"count\": \"%d\"}", sg_count++);
 
     if (size < 0 || size > sizeof(topic_content) - 1) {
         ESP_LOGE(TAG, "payload content length not enough! content size:%d  buf size:%d", size, (int)sizeof(topic_content));
@@ -221,6 +222,27 @@ static int _publish_msg(void* client)
  *
  */
 static int _register_subscribe_topics(void* client)
+{
+    static char topic_name[128] = {0};
+    static char user_data[128] = {0};
+    int size = HAL_Snprintf(topic_name, sizeof(topic_name), "%s/%s/%s", QCLOUD_IOT_MY_PRODUCT_ID, QCLOUD_IOT_MY_DEVICE_NAME, "data");
+
+    if (size < 0 || size > sizeof(topic_name) - 1) {
+        Log_e("topic content length not enough! content size:%d  buf size:%d", size, (int)sizeof(topic_name));
+        return QCLOUD_ERR_FAILURE;
+    }
+
+    SubscribeParams sub_params = DEFAULT_SUB_PARAMS;
+    sub_params.on_message_handler = on_message_callback;
+    sub_params.user_data = user_data;
+    return IOT_MQTT_Subscribe(client, topic_name, &sub_params);
+}
+
+/*
+ 测试topics订阅
+ 
+*/
+static int _my_register_subscribe_topics(void* client)
 {
     static char topic_name[128] = {0};
     static char user_data[128] = {0};
@@ -286,7 +308,7 @@ void qcloud_mqtt_demo(void)
             break;
         }
 
-    } while (0);
+    } while (1);
 
     IOT_MQTT_Destroy(&client);
 }
