@@ -1,11 +1,11 @@
 /* #undef AUTH_MODE_CERT */
 #define AUTH_MODE_KEY
 /* #undef AUTH_WITH_NOTLS */
-/* #undef GATEWAY_ENABLED */
-#define COAP_COMM_ENABLED
+#define GATEWAY_ENABLED
+/* #undef COAP_COMM_ENABLED */
 #define OTA_MQTT_CHANNEL
 #define SYSTEM_COMM
-/* #undef DEV_DYN_REG_ENABLED */
+#define DEV_DYN_REG_ENABLED
 /* #undef LOG_UPLOAD */
 /* #undef IOT_DEBUG */
 /* #undef DEBUG_DEV_INFO_USED */
@@ -14,3 +14,6 @@
 /* #undef AT_OS_USED */
 /* #undef AT_DEBUG */
 #define OTA_USE_HTTPS
+#define MULTITHREAD_ENABLED
+#define BROADCAST_ENABLED
+#define RRPC_ENABLED

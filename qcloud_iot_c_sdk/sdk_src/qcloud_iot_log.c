@@ -114,6 +114,7 @@ void IOT_Log_Gen(const char *file, const char *func, const int line, const int l
 
     /* format log content */
 	const char *file_name = _get_filename(file);
+    char time_str[20];
 
 	char sg_text_buf[MAX_LOG_MSG_LEN + 1];
 	char		*tmp_buf = sg_text_buf;

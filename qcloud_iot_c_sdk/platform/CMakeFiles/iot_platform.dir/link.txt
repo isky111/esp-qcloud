@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../output/release/lib/libiot_platform.a  CMakeFiles/iot_platform.dir/os/freertos/HAL_Device_freertos.c.o CMakeFiles/iot_platform.dir/os/freertos/HAL_OS_freertos.c.o CMakeFiles/iot_platform.dir/os/freertos/HAL_TCP_lwip.c.o CMakeFiles/iot_platform.dir/os/freertos/HAL_Timer_freertos.c.o CMakeFiles/iot_platform.dir/os/freertos/HAL_UDP_lwip.c.o CMakeFiles/iot_platform.dir/tls/mbedtls/HAL_DTLS_mbedtls.c.o CMakeFiles/iot_platform.dir/tls/mbedtls/HAL_TLS_mbedtls.c.o
+/usr/bin/ranlib ../../output/release/lib/libiot_platform.a
